@@ -1,0 +1,20 @@
+{
+  "abgs_version": "0.1.0",
+  "evaluation_protocol_id": "abgs-eval-hybrid-1",
+  "validated_qa_sha256": "6a5ca08ebdbe879cf17a90a7a008b0c9873c4f838d7e6641e97087eb4645a1c4",
+  "validated_qa_path": "C:/AI Projects/ABGS/artifacts/runs/fly_fishing/validated_qa.jsonl",
+  "run_manifest_sha256": "7e697f0485cf875fa02149e9655da42bf3d94781c49b6fbde5e65757bf496a1d",
+  "run_manifest_path": "C:/AI Projects/ABGS/artifacts/runs/fly_fishing/run_manifest.json",
+  "run_id": "709bd80eb54b",
+  "pipeline_version": "0.1.0",
+  "config_hash": "f8e4fb961aae12b89b42a7e38e8012c6601fd2e4e25accb58ceead3928fcebfa",
+  "input_corpus_hashes": [
+    "856b3d2ce3a5214c68eafc71f2a6485c343043f83a5bfb5bd3519daa7e8e8d2c",
+    "603b2684ef627b20729898dee3e2c0d4b7188ee1573691b00b81f5c5c5c8343a",
+    "7530491e22d56d5fff6dc4d66d60a68aed61f3d2813ff6af0faeb7f88dc4e1ee"
+  ],
+  "resolved_models": {
+    "gemini": "gemini-2.5-flash",
+    "anthropic": "claude-sonnet-4-20250514"
+  }
+}

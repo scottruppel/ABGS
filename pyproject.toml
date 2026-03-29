@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abgs"
+version = "0.1.0"
+description = "Agentic Benchmark Generation System MVP"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "PyYAML>=6.0",
+  "pypdf>=4.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.1",
+]
+ingest-extra = [
+  "pymupdf>=1.24.0",
+]
+
+[project.scripts]
+abgs-run = "abgs.cli:main"
+abgs-compare = "abgs.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

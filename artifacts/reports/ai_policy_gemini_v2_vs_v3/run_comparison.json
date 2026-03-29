@@ -1,0 +1,79 @@
+{
+  "baseline_run": "AI_Policy_gemini_pilot_v2",
+  "candidate_run": "AI_Policy_gemini_pilot_v3",
+  "baseline_path": "artifacts\\runs\\AI_Policy_gemini_pilot_v2",
+  "candidate_path": "artifacts\\runs\\AI_Policy_gemini_pilot_v3",
+  "summary": {
+    "baseline_validation_pass_rate": 0.883,
+    "candidate_validation_pass_rate": 0.983,
+    "validation_pass_rate_delta": 0.1,
+    "baseline_dataset_size": 53,
+    "candidate_dataset_size": 59,
+    "dataset_size_delta": 6,
+    "baseline_hard_fail_count": 7,
+    "candidate_hard_fail_count": 1,
+    "hard_fail_delta": -6,
+    "recommendation": "Candidate run is an improvement and should be treated as the new benchmark baseline."
+  },
+  "quality_deltas": {
+    "multi_chunk_ratio_delta": -0.021,
+    "avg_citations_per_question_delta": 0.116,
+    "avg_confidence_delta": 0.07,
+    "recovered_grounding_rate_delta": 0.85,
+    "duplicate_hard_fail_delta": 0,
+    "low_information_soft_fail_delta": 0
+  },
+  "preprocessing_deltas": {
+    "raw_chunk_count_delta": 0,
+    "accepted_chunk_count_delta": 0,
+    "filtered_chunk_count_delta": 0,
+    "baseline_filter_reason_counts": {
+      "front_matter_layout": 5,
+      "front_matter_marker": 5,
+      "cover_page_marker": 5,
+      "version_header": 1,
+      "table_of_contents_pattern": 10,
+      "low_alpha_density": 8,
+      "ocr_noise": 1
+    },
+    "candidate_filter_reason_counts": {
+      "front_matter_layout": 5,
+      "front_matter_marker": 5,
+      "cover_page_marker": 5,
+      "version_header": 1,
+      "table_of_contents_pattern": 10,
+      "low_alpha_density": 8,
+      "ocr_noise": 1
+    }
+  },
+  "generation_deltas": {
+    "generated_questions_delta": 0,
+    "skipped_duplicate_signatures_delta": 0,
+    "skipped_low_quality_topics_delta": -2,
+    "unique_topic_count_delta": 0
+  },
+  "evaluation_deltas": {
+    "models": {
+      "cautious_refuser": {
+        "baseline_answer_support_rate": 0.708,
+        "candidate_answer_support_rate": 0.636,
+        "answer_support_rate_delta": -0.072
+      },
+      "gemini:gemini-2.5-flash": {
+        "baseline_answer_support_rate": 0.0,
+        "candidate_answer_support_rate": 0.347,
+        "answer_support_rate_delta": 0.347
+      },
+      "extractive_baseline": {
+        "baseline_answer_support_rate": 0.915,
+        "candidate_answer_support_rate": 0.847,
+        "answer_support_rate_delta": -0.068
+      },
+      "oracle": {
+        "baseline_answer_support_rate": 0.0,
+        "candidate_answer_support_rate": 0.0,
+        "answer_support_rate_delta": 0.0
+      }
+    }
+  }
+}

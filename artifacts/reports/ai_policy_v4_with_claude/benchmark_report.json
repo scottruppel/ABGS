@@ -1,0 +1,882 @@
+{
+  "dataset_overview": {
+    "size": 59,
+    "difficulty_distribution": {
+      "L2": 18,
+      "L3": 9,
+      "L1": 32
+    },
+    "question_type_distribution": {
+      "factual": 17,
+      "procedural": 15,
+      "analytical": 13,
+      "edge_case": 14
+    },
+    "multi_chunk_ratio": 0.356,
+    "validation_pass_rate": 0.983,
+    "recovered_grounding_rate": 0.883
+  },
+  "executive_summary": {
+    "best_overall_support_model": "extractive_baseline",
+    "best_overall_support_rate": 0.931,
+    "best_demo_slice_model": "extractive_baseline",
+    "best_demo_slice_support_rate": 0.906,
+    "best_refusal_model": "cautious_refuser",
+    "best_refusal_rate": 0.288,
+    "headline": "- The benchmark separates grounded extractive behavior from abstention-heavy behavior and from abstractive answering."
+  },
+  "model_comparison": {
+    "gemini:gemini-2.5-flash": {
+      "exact_match_rate": 0.085,
+      "answer_support_rate": 0.751,
+      "citation_support_rate": 0.39,
+      "answer_alignment_rate": 0.715,
+      "refusal_rate": 0.102,
+      "appropriate_refusal_rate": 0.051,
+      "inappropriate_refusal_rate": 0.051
+    },
+    "anthropic": {
+      "exact_match_rate": 0.034,
+      "answer_support_rate": 0.741,
+      "citation_support_rate": 0.314,
+      "answer_alignment_rate": 0.709,
+      "refusal_rate": 0.068,
+      "appropriate_refusal_rate": 0.0,
+      "inappropriate_refusal_rate": 0.068
+    },
+    "extractive_baseline": {
+      "exact_match_rate": 0.017,
+      "answer_support_rate": 0.931,
+      "citation_support_rate": 0.907,
+      "answer_alignment_rate": 0.685,
+      "refusal_rate": 0.0,
+      "appropriate_refusal_rate": 0.0,
+      "inappropriate_refusal_rate": 0.0
+    },
+    "cautious_refuser": {
+      "exact_match_rate": 0.017,
+      "answer_support_rate": 0.69,
+      "citation_support_rate": 0.678,
+      "answer_alignment_rate": 0.492,
+      "refusal_rate": 0.288,
+      "appropriate_refusal_rate": 0.288,
+      "inappropriate_refusal_rate": 0.0
+    }
+  },
+  "breakdown_by_difficulty": {
+    "gemini:gemini-2.5-flash": {
+      "L2": {
+        "total": 18,
+        "exact_match_rate": 0.056,
+        "answer_support_rate": 0.705,
+        "citation_support_rate": 0.306,
+        "answer_alignment_rate": 0.681,
+        "refusal_rate": 0.111,
+        "appropriate_refusal_rate": 0.056,
+        "inappropriate_refusal_rate": 0.056
+      },
+      "L3": {
+        "total": 9,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.572,
+        "citation_support_rate": 0.278,
+        "answer_alignment_rate": 0.558,
+        "refusal_rate": 0.222,
+        "appropriate_refusal_rate": 0.222,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 32,
+        "exact_match_rate": 0.125,
+        "answer_support_rate": 0.828,
+        "citation_support_rate": 0.469,
+        "answer_alignment_rate": 0.779,
+        "refusal_rate": 0.062,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.062
+      }
+    },
+    "anthropic": {
+      "L2": {
+        "total": 18,
+        "exact_match_rate": 0.056,
+        "answer_support_rate": 0.674,
+        "citation_support_rate": 0.222,
+        "answer_alignment_rate": 0.657,
+        "refusal_rate": 0.111,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.111
+      },
+      "L3": {
+        "total": 9,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.685,
+        "citation_support_rate": 0.278,
+        "answer_alignment_rate": 0.669,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 32,
+        "exact_match_rate": 0.031,
+        "answer_support_rate": 0.795,
+        "citation_support_rate": 0.375,
+        "answer_alignment_rate": 0.749,
+        "refusal_rate": 0.062,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.062
+      }
+    },
+    "extractive_baseline": {
+      "L2": {
+        "total": 18,
+        "exact_match_rate": 0.056,
+        "answer_support_rate": 0.841,
+        "citation_support_rate": 0.778,
+        "answer_alignment_rate": 0.65,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L3": {
+        "total": 9,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.863,
+        "citation_support_rate": 0.833,
+        "answer_alignment_rate": 0.671,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 32,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 0.709,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "cautious_refuser": {
+      "L2": {
+        "total": 18,
+        "exact_match_rate": 0.056,
+        "answer_support_rate": 0.707,
+        "citation_support_rate": 0.667,
+        "answer_alignment_rate": 0.523,
+        "refusal_rate": 0.222,
+        "appropriate_refusal_rate": 0.222,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L3": {
+        "total": 9,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.0,
+        "citation_support_rate": 0.0,
+        "answer_alignment_rate": 0.0,
+        "refusal_rate": 1.0,
+        "appropriate_refusal_rate": 1.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 32,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.875,
+        "citation_support_rate": 0.875,
+        "answer_alignment_rate": 0.613,
+        "refusal_rate": 0.125,
+        "appropriate_refusal_rate": 0.125,
+        "inappropriate_refusal_rate": 0.0
+      }
+    }
+  },
+  "breakdown_by_question_type": {
+    "gemini:gemini-2.5-flash": {
+      "factual": {
+        "total": 17,
+        "exact_match_rate": 0.176,
+        "answer_support_rate": 0.891,
+        "citation_support_rate": 0.529,
+        "answer_alignment_rate": 0.851,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "procedural": {
+        "total": 15,
+        "exact_match_rate": 0.067,
+        "answer_support_rate": 0.728,
+        "citation_support_rate": 0.467,
+        "answer_alignment_rate": 0.679,
+        "refusal_rate": 0.133,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.133
+      },
+      "analytical": {
+        "total": 13,
+        "exact_match_rate": 0.077,
+        "answer_support_rate": 0.712,
+        "citation_support_rate": 0.308,
+        "answer_alignment_rate": 0.689,
+        "refusal_rate": 0.154,
+        "appropriate_refusal_rate": 0.154,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 14,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.644,
+        "citation_support_rate": 0.214,
+        "answer_alignment_rate": 0.614,
+        "refusal_rate": 0.143,
+        "appropriate_refusal_rate": 0.071,
+        "inappropriate_refusal_rate": 0.071
+      }
+    },
+    "anthropic": {
+      "factual": {
+        "total": 17,
+        "exact_match_rate": 0.059,
+        "answer_support_rate": 0.855,
+        "citation_support_rate": 0.412,
+        "answer_alignment_rate": 0.812,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "procedural": {
+        "total": 15,
+        "exact_match_rate": 0.067,
+        "answer_support_rate": 0.624,
+        "citation_support_rate": 0.367,
+        "answer_alignment_rate": 0.594,
+        "refusal_rate": 0.267,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.267
+      },
+      "analytical": {
+        "total": 13,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.763,
+        "citation_support_rate": 0.231,
+        "answer_alignment_rate": 0.74,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 14,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.709,
+        "citation_support_rate": 0.214,
+        "answer_alignment_rate": 0.678,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "extractive_baseline": {
+      "factual": {
+        "total": 17,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.956,
+        "citation_support_rate": 0.941,
+        "answer_alignment_rate": 0.753,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "procedural": {
+        "total": 15,
+        "exact_match_rate": 0.067,
+        "answer_support_rate": 0.964,
+        "citation_support_rate": 0.933,
+        "answer_alignment_rate": 0.693,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "analytical": {
+        "total": 13,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.817,
+        "citation_support_rate": 0.769,
+        "answer_alignment_rate": 0.664,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 14,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.968,
+        "citation_support_rate": 0.964,
+        "answer_alignment_rate": 0.615,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "cautious_refuser": {
+      "factual": {
+        "total": 17,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.956,
+        "citation_support_rate": 0.941,
+        "answer_alignment_rate": 0.753,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "procedural": {
+        "total": 15,
+        "exact_match_rate": 0.067,
+        "answer_support_rate": 0.964,
+        "citation_support_rate": 0.933,
+        "answer_alignment_rate": 0.693,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "analytical": {
+        "total": 13,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.0,
+        "citation_support_rate": 0.0,
+        "answer_alignment_rate": 0.0,
+        "refusal_rate": 1.0,
+        "appropriate_refusal_rate": 1.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 14,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.714,
+        "citation_support_rate": 0.714,
+        "answer_alignment_rate": 0.417,
+        "refusal_rate": 0.286,
+        "appropriate_refusal_rate": 0.286,
+        "inappropriate_refusal_rate": 0.0
+      }
+    }
+  },
+  "multi_chunk_performance": {
+    "gemini:gemini-2.5-flash": {
+      "multi_chunk": {
+        "total": 21,
+        "exact_match_rate": 0.048,
+        "answer_support_rate": 0.665,
+        "citation_support_rate": 0.31,
+        "answer_alignment_rate": 0.638,
+        "refusal_rate": 0.143,
+        "appropriate_refusal_rate": 0.095,
+        "inappropriate_refusal_rate": 0.048
+      },
+      "single_chunk": {
+        "total": 38,
+        "exact_match_rate": 0.105,
+        "answer_support_rate": 0.799,
+        "citation_support_rate": 0.434,
+        "answer_alignment_rate": 0.758,
+        "refusal_rate": 0.079,
+        "appropriate_refusal_rate": 0.026,
+        "inappropriate_refusal_rate": 0.053
+      }
+    },
+    "anthropic": {
+      "multi_chunk": {
+        "total": 21,
+        "exact_match_rate": 0.048,
+        "answer_support_rate": 0.701,
+        "citation_support_rate": 0.262,
+        "answer_alignment_rate": 0.68,
+        "refusal_rate": 0.048,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.048
+      },
+      "single_chunk": {
+        "total": 38,
+        "exact_match_rate": 0.026,
+        "answer_support_rate": 0.763,
+        "citation_support_rate": 0.342,
+        "answer_alignment_rate": 0.725,
+        "refusal_rate": 0.079,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.079
+      }
+    },
+    "extractive_baseline": {
+      "multi_chunk": {
+        "total": 21,
+        "exact_match_rate": 0.048,
+        "answer_support_rate": 0.906,
+        "citation_support_rate": 0.881,
+        "answer_alignment_rate": 0.668,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "single_chunk": {
+        "total": 38,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.944,
+        "citation_support_rate": 0.921,
+        "answer_alignment_rate": 0.695,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "cautious_refuser": {
+      "multi_chunk": {
+        "total": 21,
+        "exact_match_rate": 0.048,
+        "answer_support_rate": 0.536,
+        "citation_support_rate": 0.524,
+        "answer_alignment_rate": 0.38,
+        "refusal_rate": 0.429,
+        "appropriate_refusal_rate": 0.429,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "single_chunk": {
+        "total": 38,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.775,
+        "citation_support_rate": 0.763,
+        "answer_alignment_rate": 0.554,
+        "refusal_rate": 0.211,
+        "appropriate_refusal_rate": 0.211,
+        "inappropriate_refusal_rate": 0.0
+      }
+    }
+  },
+  "demo_grade_slice": {
+    "gemini:gemini-2.5-flash": {
+      "exact_match_rate": 0.048,
+      "answer_support_rate": 0.665,
+      "citation_support_rate": 0.31,
+      "answer_alignment_rate": 0.638,
+      "refusal_rate": 0.143,
+      "appropriate_refusal_rate": 0.095,
+      "inappropriate_refusal_rate": 0.048
+    },
+    "anthropic": {
+      "exact_match_rate": 0.048,
+      "answer_support_rate": 0.701,
+      "citation_support_rate": 0.262,
+      "answer_alignment_rate": 0.68,
+      "refusal_rate": 0.048,
+      "appropriate_refusal_rate": 0.0,
+      "inappropriate_refusal_rate": 0.048
+    },
+    "extractive_baseline": {
+      "exact_match_rate": 0.048,
+      "answer_support_rate": 0.906,
+      "citation_support_rate": 0.881,
+      "answer_alignment_rate": 0.668,
+      "refusal_rate": 0.0,
+      "appropriate_refusal_rate": 0.0,
+      "inappropriate_refusal_rate": 0.0
+    },
+    "cautious_refuser": {
+      "exact_match_rate": 0.048,
+      "answer_support_rate": 0.536,
+      "citation_support_rate": 0.524,
+      "answer_alignment_rate": 0.38,
+      "refusal_rate": 0.429,
+      "appropriate_refusal_rate": 0.429,
+      "inappropriate_refusal_rate": 0.0
+    }
+  },
+  "example_failures": {
+    "gemini:gemini-2.5-flash": [
+      {
+        "benchmark_id": "805d62b03b4a-q-0004",
+        "question": "What type of guidance has the DoD Chief Information Office (CIO) published to ensure AI systems are secure and resilient?",
+        "benchmark_answer": "The DoD Chief Information Office (CIO) has published guidance integrating cybersecurity risk management, cyber test and evaluation (T&E), and acquisitions processes for the Software Acquisition Pathway.",
+        "model_output": "The provided source excerpts do not specify the type of guidance published by the DoD Chief Information Office (CIO) to ensure AI systems are secure and resilient. It mentions guidance related to cybersecurity risk management, cyber test and evaluation, and acquisitions processes for the Software Acquisition Pathway.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0005",
+        "question": "What measures are required to protect advanced AI technologies from misuse or theft?",
+        "benchmark_answer": "Advanced AI technologies must be prevented from being misused or stolen by malicious actors, and emerging and unforeseen risks from AI need to be monitored with constant vigilance.",
+        "model_output": "The provided source excerpts state that preventing advanced technologies from being misused or stolen will require constant vigilance, but they do not detail specific measures required to achieve this.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0015",
+        "question": "What specific instruction does DoDI 8500.01 mandate for DoD organizations regarding their systems, especially in the context of evolving vulnerabilities?",
+        "benchmark_answer": "DoDI 8500.01 requires DoD organizations to categorize all their systems in accordance with Committee on National Security Systems Instruction (CNSSI) 1253.",
+        "model_output": "The provided source excerpt states that DoDI 8500.01 mandates DoD organizations to categorize all DoD systems in accordance with Committee on National Security Systems Instruction (CNSSI) 1253. It does not provide specific instructions regarding evolving vulnerabilities.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "edge_case",
+        "failure_modes": [
+          "ambiguous_question"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0025",
+        "question": "How does U.S. government policy aim to protect freedom of speech and ensure truthfulness in the era of AI, according to the provided text?",
+        "benchmark_answer": "U.S. government policy aims to ensure free speech flourishes and that AI procured by the Federal government objectively reflects truth rather than social engineering agendas, and also plans to revise the NIST AI Risk Management Framework to eliminate references to misinformation, Diversity, Equity, and Inclusion, and climate change.",
+        "model_output": "REFUSE: live evaluation failed",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0033",
+        "question": "What specific component of President Trump's AI Action Plan is the Department of War's AI integration strategy designed to be consistent with?",
+        "benchmark_answer": "The strategy is consistent with the directive to \"Lead in International AI Diplomacy and Security.\"",
+        "model_output": "The provided source excerpts do not mention the Department of War's AI integration strategy or what specific component of President Trump's AI Action Plan it is designed to be consistent with.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L1",
+        "question_type": "edge_case",
+        "failure_modes": [
+          "ambiguous_question"
+        ]
+      }
+    ],
+    "anthropic": [
+      {
+        "benchmark_id": "805d62b03b4a-q-0005",
+        "question": "What measures are required to protect advanced AI technologies from misuse or theft?",
+        "benchmark_answer": "Advanced AI technologies must be prevented from being misused or stolen by malicious actors, and emerging and unforeseen risks from AI need to be monitored with constant vigilance.",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0032",
+        "question": "How does America plan to make large-scale computing power more accessible for startups and academics?",
+        "benchmark_answer": "By improving the financial market for compute.",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": [
+          "low_information_value",
+          "overly_trivial"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0044",
+        "question": "What security priorities should data scientists, data engineers, and cybersecurity teams consider when implementing cybersecurity for an AI system?",
+        "benchmark_answer": "They should consider the security priorities outlined in the following sections of the document.",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L1",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0051",
+        "question": "How should the effectiveness of the DOD and IC's AI adoption initiatives be evaluated?",
+        "benchmark_answer": "The effectiveness should be evaluated based on AI net assessments.",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L1",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0008",
+        "question": "What specific governmental action is emphasized as necessary to allow the private sector to lead AI innovation and maintain global leadership?",
+        "benchmark_answer": "The government must remove red tape and onerous regulations to enable private-sector-led innovation.",
+        "model_output": "Removing red tape and dismantling unnecessary regulatory barriers that hinder private sector innovation is emphasized as the necessary governmental action to allow the private sector to lead AI innovation and maintain global leadership.",
+        "support_rate": 0.381,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.381,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L3",
+        "question_type": "edge_case",
+        "failure_modes": [
+          "ambiguous_question"
+        ]
+      }
+    ],
+    "cautious_refuser": [
+      {
+        "benchmark_id": "805d62b03b4a-q-0004",
+        "question": "What type of guidance has the DoD Chief Information Office (CIO) published to ensure AI systems are secure and resilient?",
+        "benchmark_answer": "The DoD Chief Information Office (CIO) has published guidance integrating cybersecurity risk management, cyber test and evaluation (T&E), and acquisitions processes for the Software Acquisition Pathway.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0006",
+        "question": "What are the three foundational pillars of America's AI Action Plan?",
+        "benchmark_answer": "The three pillars of America\u2019s AI Action Plan are innovation, infrastructure, and international diplomacy and security.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0007",
+        "question": "To what extent do individual DoD organizations have the authority to set their own risk tolerance for the use of AI systems, despite overarching cybersecurity implementation guidance?",
+        "benchmark_answer": "Each DoD organization retains the autonomy to determine its own risk tolerance for AI system use, provided it aligns with established DoD strategies, policies, and specific cybersecurity program parameters.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "edge_case",
+        "failure_modes": [
+          "ambiguous_question"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0008",
+        "question": "What specific governmental action is emphasized as necessary to allow the private sector to lead AI innovation and maintain global leadership?",
+        "benchmark_answer": "The government must remove red tape and onerous regulations to enable private-sector-led innovation.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "edge_case",
+        "failure_modes": [
+          "ambiguous_question"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0014",
+        "question": "Why is tailoring of general DoD cybersecurity risk management methods necessary for AI systems?",
+        "benchmark_answer": "Tailoring is required because AI systems possess essential priorities and unique security considerations.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      }
+    ],
+    "extractive_baseline": [
+      {
+        "benchmark_id": "805d62b03b4a-q-0017",
+        "question": "What strategic actions are being pursued to foster AI development and adoption in America?",
+        "benchmark_answer": "Strategic actions include identifying, revising, or repealing regulations that unnecessarily hinder AI development or deployment, and ensuring America has leading open-source and open-weight AI models founded on American values.",
+        "model_output": "work \nwith all F ederal agencies to identify, revise, or repeal regulations, rules, memoranda, \nadministrative orders, guidance documents, policy statements, and interagency \nagreements that unnecessarily hinder AI development or deployment.",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.321,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0053",
+        "question": "What is the dual impact of AI on the American workforce, and what is the necessary response to this transformation?",
+        "benchmark_answer": "AI can create new pathways to economic opportunity for American workers, but it will also transform how work is done across all industries, demanding a serious workforce response to help workers navigate this transition.",
+        "model_output": "can help America build an economy that delivers more pathways to economic opportunity for American workers.",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.375,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L2",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0052",
+        "question": "What is the process for system owners to handle deviations when tailoring the RMF process?",
+        "benchmark_answer": "System owners must document deviations within the system\u2019s Security Plan. If these deviations create unmitigated cybersecurity risks, they must be tracked and closed via the system\u2019s Plan of Action and Milestones (POA&M).",
+        "model_output": "tailoring allows system owners to document deviations within the system\u2019s Security Plan",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.462,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0002",
+        "question": "How does the Department plan to achieve Military AI Dominance and become an \"AI-first\" warfighting force?",
+        "benchmark_answer": "The Department aims to achieve Military AI Dominance by unleashing experimentation with leading AI models, eliminating bureaucratic barriers, focusing investment on America's core asymmetric advantages in AI, and executing \"Pace-Setting Projects.\"",
+        "model_output": "The Department will achieve this objective by: \n\u2022 Unleashing experimentation with America's leading AI models Department\u00ad\nwide, and rewarding AI-first re-conceptions of legacy approaches;",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.473,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L2",
+        "question_type": "factual",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "805d62b03b4a-q-0008",
+        "question": "What specific governmental action is emphasized as necessary to allow the private sector to lead AI innovation and maintain global leadership?",
+        "benchmark_answer": "The government must remove red tape and onerous regulations to enable private-sector-led innovation.",
+        "model_output": "dismantle unnecessary regulatory barriers that hinder the \nprivate sector in doing so.",
+        "support_rate": 0.556,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.556,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L3",
+        "question_type": "edge_case",
+        "failure_modes": [
+          "ambiguous_question"
+        ]
+      }
+    ]
+  },
+  "model_behavior_profiles": {
+    "anthropic": {
+      "display_name": "Claude Sonnet 4",
+      "strengths": [
+        "Higher hybrid answer support on multi-chunk synthesis (vs other live models).",
+        "Lower overall refusal rate (answers more often)."
+      ],
+      "weaknesses": [
+        "Lower citation overlap with source excerpts."
+      ],
+      "behavioral_tendency": "More assertive: lower refusal; source-quote overlap is not the strongest signal on this slice."
+    },
+    "gemini:gemini-2.5-flash": {
+      "display_name": "Gemini 2.5 Flash",
+      "strengths": [
+        "Higher citation overlap with source excerpts (quote-style grounding)."
+      ],
+      "weaknesses": [
+        "Lower hybrid answer support on multi-chunk synthesis (vs other live models).",
+        "Higher overall refusal rate."
+      ],
+      "behavioral_tendency": "Conservative: stays close to source overlap and declines more often."
+    }
+  },
+  "use_case_guidance": [
+    "- **Compliance / policy interpretation (maximize source grounding):** prefer **`Gemini 2.5 Flash`** (higher citation support on this benchmark).",
+    "- **Multi-document synthesis:** prefer **`Claude Sonnet 4`** (higher hybrid support on multi-chunk items).",
+    "- **Exploratory Q&A / lower friction:** consider **`Claude Sonnet 4`** (lower refusal rate than `Gemini 2.5 Flash` on this benchmark)."
+  ],
+  "evaluation_protocol": {
+    "abgs_version": "0.1.0",
+    "evaluation_protocol_id": "abgs-eval-hybrid-1",
+    "validated_qa_sha256": "02d922681bc4e38d5502778048a163905f23eee29997bcfdf6adacca4284edac",
+    "validated_qa_path": "C:/AI Projects/ABGS/artifacts/runs/AI_Policy_gemini_pilot_v4/validated_qa.jsonl",
+    "run_manifest_sha256": "f479e84a20f710faaa0fd61b93b862063c1ed3c3c81a4d5ac696b1aae37cc895",
+    "run_manifest_path": "C:/AI Projects/ABGS/artifacts/runs/AI_Policy_gemini_pilot_v4/run_manifest.json",
+    "run_id": "805d62b03b4a",
+    "pipeline_version": "0.1.0",
+    "config_hash": "5745477fc9fc327dbe5860859ac231934d8a42a807d7157ed0afd990721e6167",
+    "input_corpus_hashes": [
+      "f0342b097f949b2e27eac87f35996df8cef6d8a752c9c07200bfbd87d3672b8b",
+      "91d56ab3ddefe43f395bde31e1c3923fb37f47091275aaf2a0d7da500ff547f4",
+      "f1688147a60754365cfe7340cbf11d7579b86f562917313ffce90ed7fbbdbeaf"
+    ],
+    "resolved_models": {
+      "gemini": "gemini-2.5-flash",
+      "anthropic": "claude-sonnet-4-20250514"
+    }
+  }
+}

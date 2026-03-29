@@ -1,0 +1,30 @@
+name: policy_docs
+category: policy
+chunking:
+  strategy_id: sentence_window
+  version: "1.0"
+  target_tokens: 100
+  overlap_tokens: 16
+generation:
+  prompt_version: v1
+  provider: deterministic
+  model_name: template_generator
+  seed: 11
+  minimum_multi_chunk_ratio: 0.35
+quality:
+  duplicate_similarity_threshold: 0.9
+  review_confidence_threshold: 0.72
+  multi_chunk_target: 0.4
+  multi_chunk_warning: 0.25
+  validation_pass_target_min: 0.6
+  validation_pass_target_max: 0.85
+  validation_pass_warning: 0.5
+  answer_support_target: 0.8
+  answer_support_warning: 0.6
+evaluation:
+  models:
+    - oracle
+    - extractive_baseline
+    - cautious_refuser
+  max_cost_usd: 25.0
+  max_tokens_total: 250000

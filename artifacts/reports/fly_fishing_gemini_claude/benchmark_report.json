@@ -1,0 +1,981 @@
+{
+  "dataset_overview": {
+    "size": 931,
+    "difficulty_distribution": {
+      "L2": 253,
+      "L3": 110,
+      "L1": 568
+    },
+    "question_type_distribution": {
+      "factual": 328,
+      "procedural": 330,
+      "analytical": 77,
+      "edge_case": 196
+    },
+    "multi_chunk_ratio": 0.39,
+    "validation_pass_rate": 0.544,
+    "recovered_grounding_rate": 0.0
+  },
+  "executive_summary": {
+    "best_overall_support_model": "oracle",
+    "best_overall_support_rate": 1.0,
+    "best_demo_slice_model": "oracle",
+    "best_demo_slice_support_rate": 1.0,
+    "best_refusal_model": "cautious_refuser",
+    "best_refusal_rate": 0.161,
+    "headline": "- The benchmark separates grounded extractive behavior from abstention-heavy behavior and from abstractive answering."
+  },
+  "model_comparison": {
+    "gemini:gemini-2.5-flash": {
+      "exact_match_rate": 0.001,
+      "answer_support_rate": 0.241,
+      "citation_support_rate": 0.11,
+      "answer_alignment_rate": 0.227,
+      "refusal_rate": 0.643,
+      "appropriate_refusal_rate": 0.145,
+      "inappropriate_refusal_rate": 0.498
+    },
+    "anthropic": {
+      "exact_match_rate": 0.001,
+      "answer_support_rate": 0.284,
+      "citation_support_rate": 0.155,
+      "answer_alignment_rate": 0.258,
+      "refusal_rate": 0.609,
+      "appropriate_refusal_rate": 0.15,
+      "inappropriate_refusal_rate": 0.459
+    },
+    "oracle": {
+      "exact_match_rate": 1.0,
+      "answer_support_rate": 1.0,
+      "citation_support_rate": 1.0,
+      "answer_alignment_rate": 1.0,
+      "refusal_rate": 0.0,
+      "appropriate_refusal_rate": 0.0,
+      "inappropriate_refusal_rate": 0.0
+    },
+    "extractive_baseline": {
+      "exact_match_rate": 0.61,
+      "answer_support_rate": 0.894,
+      "citation_support_rate": 0.811,
+      "answer_alignment_rate": 0.889,
+      "refusal_rate": 0.0,
+      "appropriate_refusal_rate": 0.0,
+      "inappropriate_refusal_rate": 0.0
+    },
+    "cautious_refuser": {
+      "exact_match_rate": 0.567,
+      "answer_support_rate": 0.763,
+      "citation_support_rate": 0.707,
+      "answer_alignment_rate": 0.758,
+      "refusal_rate": 0.161,
+      "appropriate_refusal_rate": 0.161,
+      "inappropriate_refusal_rate": 0.0
+    }
+  },
+  "breakdown_by_difficulty": {
+    "gemini:gemini-2.5-flash": {
+      "L2": {
+        "total": 253,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.259,
+        "citation_support_rate": 0.103,
+        "answer_alignment_rate": 0.257,
+        "refusal_rate": 0.518,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.518
+      },
+      "L3": {
+        "total": 110,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.04,
+        "citation_support_rate": 0.005,
+        "answer_alignment_rate": 0.04,
+        "refusal_rate": 0.918,
+        "appropriate_refusal_rate": 0.918,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 568,
+        "exact_match_rate": 0.002,
+        "answer_support_rate": 0.272,
+        "citation_support_rate": 0.134,
+        "answer_alignment_rate": 0.25,
+        "refusal_rate": 0.646,
+        "appropriate_refusal_rate": 0.06,
+        "inappropriate_refusal_rate": 0.586
+      }
+    },
+    "anthropic": {
+      "L2": {
+        "total": 253,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.267,
+        "citation_support_rate": 0.103,
+        "answer_alignment_rate": 0.264,
+        "refusal_rate": 0.53,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.53
+      },
+      "L3": {
+        "total": 110,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.018,
+        "citation_support_rate": 0.009,
+        "answer_alignment_rate": 0.013,
+        "refusal_rate": 0.973,
+        "appropriate_refusal_rate": 0.973,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 568,
+        "exact_match_rate": 0.002,
+        "answer_support_rate": 0.343,
+        "citation_support_rate": 0.206,
+        "answer_alignment_rate": 0.303,
+        "refusal_rate": 0.574,
+        "appropriate_refusal_rate": 0.058,
+        "inappropriate_refusal_rate": 0.516
+      }
+    },
+    "oracle": {
+      "L2": {
+        "total": 253,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L3": {
+        "total": 110,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 568,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "extractive_baseline": {
+      "L2": {
+        "total": 253,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.721,
+        "citation_support_rate": 0.516,
+        "answer_alignment_rate": 0.702,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L3": {
+        "total": 110,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.746,
+        "citation_support_rate": 0.514,
+        "answer_alignment_rate": 0.743,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 568,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "cautious_refuser": {
+      "L2": {
+        "total": 253,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.721,
+        "citation_support_rate": 0.516,
+        "answer_alignment_rate": 0.702,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L3": {
+        "total": 110,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.0,
+        "citation_support_rate": 0.0,
+        "answer_alignment_rate": 0.0,
+        "refusal_rate": 1.0,
+        "appropriate_refusal_rate": 1.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "L1": {
+        "total": 568,
+        "exact_match_rate": 0.93,
+        "answer_support_rate": 0.93,
+        "citation_support_rate": 0.93,
+        "answer_alignment_rate": 0.93,
+        "refusal_rate": 0.07,
+        "appropriate_refusal_rate": 0.07,
+        "inappropriate_refusal_rate": 0.0
+      }
+    }
+  },
+  "breakdown_by_question_type": {
+    "gemini:gemini-2.5-flash": {
+      "factual": {
+        "total": 328,
+        "exact_match_rate": 0.003,
+        "answer_support_rate": 0.589,
+        "citation_support_rate": 0.279,
+        "answer_alignment_rate": 0.552,
+        "refusal_rate": 0.14,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.14
+      },
+      "procedural": {
+        "total": 330,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.063,
+        "citation_support_rate": 0.029,
+        "answer_alignment_rate": 0.061,
+        "refusal_rate": 0.903,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.903
+      },
+      "analytical": {
+        "total": 77,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.073,
+        "citation_support_rate": 0.013,
+        "answer_alignment_rate": 0.07,
+        "refusal_rate": 0.87,
+        "appropriate_refusal_rate": 0.87,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 196,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.023,
+        "citation_support_rate": 0.003,
+        "answer_alignment_rate": 0.023,
+        "refusal_rate": 0.959,
+        "appropriate_refusal_rate": 0.347,
+        "inappropriate_refusal_rate": 0.612
+      }
+    },
+    "anthropic": {
+      "factual": {
+        "total": 328,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.596,
+        "citation_support_rate": 0.323,
+        "answer_alignment_rate": 0.542,
+        "refusal_rate": 0.183,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.183
+      },
+      "procedural": {
+        "total": 330,
+        "exact_match_rate": 0.003,
+        "answer_support_rate": 0.163,
+        "citation_support_rate": 0.1,
+        "answer_alignment_rate": 0.148,
+        "refusal_rate": 0.782,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.782
+      },
+      "analytical": {
+        "total": 77,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.07,
+        "citation_support_rate": 0.013,
+        "answer_alignment_rate": 0.063,
+        "refusal_rate": 0.883,
+        "appropriate_refusal_rate": 0.883,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 196,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.05,
+        "citation_support_rate": 0.02,
+        "answer_alignment_rate": 0.046,
+        "refusal_rate": 0.923,
+        "appropriate_refusal_rate": 0.367,
+        "inappropriate_refusal_rate": 0.556
+      }
+    },
+    "oracle": {
+      "factual": {
+        "total": 328,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "procedural": {
+        "total": 330,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "analytical": {
+        "total": 77,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 196,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "extractive_baseline": {
+      "factual": {
+        "total": 328,
+        "exact_match_rate": 0.619,
+        "answer_support_rate": 0.895,
+        "citation_support_rate": 0.814,
+        "answer_alignment_rate": 0.887,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "procedural": {
+        "total": 330,
+        "exact_match_rate": 0.612,
+        "answer_support_rate": 0.89,
+        "citation_support_rate": 0.814,
+        "answer_alignment_rate": 0.883,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "analytical": {
+        "total": 77,
+        "exact_match_rate": 0.519,
+        "answer_support_rate": 0.881,
+        "citation_support_rate": 0.773,
+        "answer_alignment_rate": 0.879,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 196,
+        "exact_match_rate": 0.628,
+        "answer_support_rate": 0.904,
+        "citation_support_rate": 0.816,
+        "answer_alignment_rate": 0.904,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "cautious_refuser": {
+      "factual": {
+        "total": 328,
+        "exact_match_rate": 0.619,
+        "answer_support_rate": 0.895,
+        "citation_support_rate": 0.814,
+        "answer_alignment_rate": 0.887,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "procedural": {
+        "total": 330,
+        "exact_match_rate": 0.612,
+        "answer_support_rate": 0.89,
+        "citation_support_rate": 0.814,
+        "answer_alignment_rate": 0.883,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "analytical": {
+        "total": 77,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.0,
+        "citation_support_rate": 0.0,
+        "answer_alignment_rate": 0.0,
+        "refusal_rate": 1.0,
+        "appropriate_refusal_rate": 1.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "edge_case": {
+        "total": 196,
+        "exact_match_rate": 0.628,
+        "answer_support_rate": 0.628,
+        "citation_support_rate": 0.628,
+        "answer_alignment_rate": 0.628,
+        "refusal_rate": 0.372,
+        "appropriate_refusal_rate": 0.372,
+        "inappropriate_refusal_rate": 0.0
+      }
+    }
+  },
+  "multi_chunk_performance": {
+    "gemini:gemini-2.5-flash": {
+      "multi_chunk": {
+        "total": 363,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.192,
+        "citation_support_rate": 0.073,
+        "answer_alignment_rate": 0.191,
+        "refusal_rate": 0.639,
+        "appropriate_refusal_rate": 0.278,
+        "inappropriate_refusal_rate": 0.361
+      },
+      "single_chunk": {
+        "total": 568,
+        "exact_match_rate": 0.002,
+        "answer_support_rate": 0.272,
+        "citation_support_rate": 0.134,
+        "answer_alignment_rate": 0.25,
+        "refusal_rate": 0.646,
+        "appropriate_refusal_rate": 0.06,
+        "inappropriate_refusal_rate": 0.586
+      }
+    },
+    "anthropic": {
+      "multi_chunk": {
+        "total": 363,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.191,
+        "citation_support_rate": 0.074,
+        "answer_alignment_rate": 0.188,
+        "refusal_rate": 0.664,
+        "appropriate_refusal_rate": 0.295,
+        "inappropriate_refusal_rate": 0.369
+      },
+      "single_chunk": {
+        "total": 568,
+        "exact_match_rate": 0.002,
+        "answer_support_rate": 0.343,
+        "citation_support_rate": 0.206,
+        "answer_alignment_rate": 0.303,
+        "refusal_rate": 0.574,
+        "appropriate_refusal_rate": 0.058,
+        "inappropriate_refusal_rate": 0.516
+      }
+    },
+    "oracle": {
+      "multi_chunk": {
+        "total": 363,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "single_chunk": {
+        "total": 568,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "extractive_baseline": {
+      "multi_chunk": {
+        "total": 363,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.729,
+        "citation_support_rate": 0.515,
+        "answer_alignment_rate": 0.714,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "single_chunk": {
+        "total": 568,
+        "exact_match_rate": 1.0,
+        "answer_support_rate": 1.0,
+        "citation_support_rate": 1.0,
+        "answer_alignment_rate": 1.0,
+        "refusal_rate": 0.0,
+        "appropriate_refusal_rate": 0.0,
+        "inappropriate_refusal_rate": 0.0
+      }
+    },
+    "cautious_refuser": {
+      "multi_chunk": {
+        "total": 363,
+        "exact_match_rate": 0.0,
+        "answer_support_rate": 0.503,
+        "citation_support_rate": 0.36,
+        "answer_alignment_rate": 0.489,
+        "refusal_rate": 0.303,
+        "appropriate_refusal_rate": 0.303,
+        "inappropriate_refusal_rate": 0.0
+      },
+      "single_chunk": {
+        "total": 568,
+        "exact_match_rate": 0.93,
+        "answer_support_rate": 0.93,
+        "citation_support_rate": 0.93,
+        "answer_alignment_rate": 0.93,
+        "refusal_rate": 0.07,
+        "appropriate_refusal_rate": 0.07,
+        "inappropriate_refusal_rate": 0.0
+      }
+    }
+  },
+  "demo_grade_slice": {
+    "gemini:gemini-2.5-flash": {
+      "exact_match_rate": 0.0,
+      "answer_support_rate": 0.192,
+      "citation_support_rate": 0.073,
+      "answer_alignment_rate": 0.191,
+      "refusal_rate": 0.639,
+      "appropriate_refusal_rate": 0.278,
+      "inappropriate_refusal_rate": 0.361
+    },
+    "anthropic": {
+      "exact_match_rate": 0.0,
+      "answer_support_rate": 0.191,
+      "citation_support_rate": 0.074,
+      "answer_alignment_rate": 0.188,
+      "refusal_rate": 0.664,
+      "appropriate_refusal_rate": 0.295,
+      "inappropriate_refusal_rate": 0.369
+    },
+    "oracle": {
+      "exact_match_rate": 1.0,
+      "answer_support_rate": 1.0,
+      "citation_support_rate": 1.0,
+      "answer_alignment_rate": 1.0,
+      "refusal_rate": 0.0,
+      "appropriate_refusal_rate": 0.0,
+      "inappropriate_refusal_rate": 0.0
+    },
+    "extractive_baseline": {
+      "exact_match_rate": 0.0,
+      "answer_support_rate": 0.729,
+      "citation_support_rate": 0.515,
+      "answer_alignment_rate": 0.714,
+      "refusal_rate": 0.0,
+      "appropriate_refusal_rate": 0.0,
+      "inappropriate_refusal_rate": 0.0
+    },
+    "cautious_refuser": {
+      "exact_match_rate": 0.0,
+      "answer_support_rate": 0.503,
+      "citation_support_rate": 0.36,
+      "answer_alignment_rate": 0.489,
+      "refusal_rate": 0.303,
+      "appropriate_refusal_rate": 0.303,
+      "inappropriate_refusal_rate": 0.0
+    }
+  },
+  "example_failures": {
+    "gemini:gemini-2.5-flash": [
+      {
+        "benchmark_id": "709bd80eb54b-q-0000",
+        "question": "What does the corpus state about related rules?",
+        "benchmark_answer": "related rules. our legacies and outdoor culture should also be a goal we all share and strive towards.",
+        "model_output": "The corpus only mentions the phrase \"related rules\" without providing any further information or statements about them.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "factual",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0003",
+        "question": "What procedure is described for lake champlain?",
+        "benchmark_answer": "Lake Champlain 60 ... opportunities for maintenance workers!",
+        "model_output": "The provided source excerpts do not describe any procedure for Lake Champlain.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0004",
+        "question": "What procedure is described for native populations?",
+        "benchmark_answer": "have native populations of Arctic charr and is the last true stronghold for wild brook trout. and stocking programs that keep Maine a fishing destination unlike any other in the United States.",
+        "model_output": "The provided excerpts do not describe a specific procedure for native populations.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0005",
+        "question": "What procedure is described for warmer-water species?",
+        "benchmark_answer": "Cape Cod and the warmer-water species that visit our southern shores create incredible diversity and opportunity. also enlisted the help of hundreds of citizen scientists to collect data on their fishing activities.",
+        "model_output": "The provided excerpts do not describe a specific procedure for warmer-water species.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0006",
+        "question": "How should the reader synthesize the guidance about waterfowl syllabus across the cited material?",
+        "benchmark_answer": "and fell asleep at night reading the waterfowl syllabus, dreaming of hermit life dressed in furs. bait.",
+        "model_output": "The provided excerpts do not contain sufficient information to synthesize guidance about the waterfowl syllabus. One excerpt mentions someone reading it, but offers no details about its content or how to synthesize guidance from it.",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      }
+    ],
+    "anthropic": [
+      {
+        "benchmark_id": "709bd80eb54b-q-0000",
+        "question": "What does the corpus state about related rules?",
+        "benchmark_answer": "related rules. our legacies and outdoor culture should also be a goal we all share and strive towards.",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "factual",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0003",
+        "question": "What procedure is described for lake champlain?",
+        "benchmark_answer": "Lake Champlain 60 ... opportunities for maintenance workers!",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0004",
+        "question": "What procedure is described for native populations?",
+        "benchmark_answer": "have native populations of Arctic charr and is the last true stronghold for wild brook trout. and stocking programs that keep Maine a fishing destination unlike any other in the United States.",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0005",
+        "question": "What procedure is described for warmer-water species?",
+        "benchmark_answer": "Cape Cod and the warmer-water species that visit our southern shores create incredible diversity and opportunity. also enlisted the help of hundreds of citizen scientists to collect data on their fishing activities.",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "inappropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0006",
+        "question": "How should the reader synthesize the guidance about waterfowl syllabus across the cited material?",
+        "benchmark_answer": "and fell asleep at night reading the waterfowl syllabus, dreaming of hermit life dressed in furs. bait.",
+        "model_output": "REFUSE: insufficient source excerpts",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      }
+    ],
+    "cautious_refuser": [
+      {
+        "benchmark_id": "709bd80eb54b-q-0006",
+        "question": "How should the reader synthesize the guidance about waterfowl syllabus across the cited material?",
+        "benchmark_answer": "and fell asleep at night reading the waterfowl syllabus, dreaming of hermit life dressed in furs. bait.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0007",
+        "question": "How should the reader synthesize the guidance about fresh-caught dinner across the cited material?",
+        "benchmark_answer": "teach kids lifelong lessons \u2014 and if you\u2019re lucky, rehash it all over a fresh-caught dinner. available in 1, 3, 7, or 15-day increments, or for the full year ($64 for 2018).",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0008",
+        "question": "How should the reader synthesize the guidance about release survival across the cited material?",
+        "benchmark_answer": "has invested lots of resources to address the factors that contribute to catch and release survival. be caught again.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "analytical",
+        "failure_modes": [
+          "multi_hop_required"
+        ]
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0009",
+        "question": "What edge case or operational risk is associated with tuition reimbursement?",
+        "benchmark_answer": "de\ufb01 ned pension, and training and tuition reimbursement. boat market share.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "edge_case",
+        "failure_modes": [
+          "ambiguous_question"
+        ]
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0010",
+        "question": "What edge case or operational risk is associated with nearby water?",
+        "benchmark_answer": "you would like to catch, and under it you\u2019ll see a list of nearby water bodies. Grant East Bowerbank Bowdoin College Grant West Bradstreet Brassua Chesuncook Comstock Days Academy Grant Dennistown Plt.",
+        "model_output": "REFUSE: insufficient certainty",
+        "support_rate": 0.0,
+        "refused": true,
+        "refusal_type": "appropriate_refusal",
+        "citation_support_rate": 0.0,
+        "answer_alignment_score": 0.0,
+        "scoring_mode": "empty_response",
+        "difficulty": "L3",
+        "question_type": "edge_case",
+        "failure_modes": [
+          "ambiguous_question"
+        ]
+      }
+    ],
+    "extractive_baseline": [
+      {
+        "benchmark_id": "709bd80eb54b-q-0133",
+        "question": "What procedure is described for today?",
+        "benchmark_answer": "Today? They are often grouped around structures such as rock piles and boulders and are quite territorial.",
+        "model_output": "Today?",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.125,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0272",
+        "question": "What does the corpus state about water?",
+        "benchmark_answer": "water. slot protects fish and allows them to continue to grow and reach a larger size class.",
+        "model_output": "water.",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.125,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L2",
+        "question_type": "factual",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0039",
+        "question": "What does the corpus state about species?",
+        "benchmark_answer": "species. acres Primary Fishery: LLS (S) Access: Trailered boat access on Mayberry Hill Rd.",
+        "model_output": "species.",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.163,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L2",
+        "question_type": "factual",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0262",
+        "question": "What does the corpus state about enosburg falls?",
+        "benchmark_answer": "Enosburg Falls. All Applicable Counties 1 Williams River Connecticut River main channel to US Route 5 bridge, Rockingham.",
+        "model_output": "Enosburg Falls.",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.221,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L2",
+        "question_type": "factual",
+        "failure_modes": []
+      },
+      {
+        "benchmark_id": "709bd80eb54b-q-0580",
+        "question": "What procedure is described for enosburg falls?",
+        "benchmark_answer": "Enosburg Falls. All Applicable Counties 1 Williams River Connecticut River main channel to US Route 5 bridge, Rockingham.",
+        "model_output": "Enosburg Falls.",
+        "support_rate": 0.5,
+        "refused": false,
+        "refusal_type": null,
+        "citation_support_rate": 0.5,
+        "answer_alignment_score": 0.221,
+        "scoring_mode": "hybrid_alignment",
+        "difficulty": "L2",
+        "question_type": "procedural",
+        "failure_modes": []
+      }
+    ]
+  },
+  "model_behavior_profiles": {
+    "anthropic": {
+      "display_name": "Claude Sonnet 4",
+      "strengths": [
+        "Higher citation overlap with source excerpts (quote-style grounding).",
+        "Lower overall refusal rate (answers more often).",
+        "Lower inappropriate-refusal rate.",
+        "Higher answer-alignment vs reference answers (paraphrase match)."
+      ],
+      "weaknesses": [],
+      "behavioral_tendency": "Grounded but comparatively willing to answer (moderate refusal)."
+    },
+    "gemini:gemini-2.5-flash": {
+      "display_name": "Gemini 2.5 Flash",
+      "strengths": [],
+      "weaknesses": [
+        "Lower citation overlap with source excerpts.",
+        "Higher overall refusal rate.",
+        "Higher inappropriate-refusal rate (abstains when benchmark expects an answer).",
+        "Lower answer-alignment vs reference answers."
+      ],
+      "behavioral_tendency": "Mixed: lower citation overlap than peers with comparatively higher refusal\u2014review failure examples."
+    }
+  },
+  "use_case_guidance": [
+    "- **Compliance / policy interpretation (maximize source grounding):** prefer **`Claude Sonnet 4`** (higher citation support on this benchmark).",
+    "- **Exploratory Q&A / lower friction:** consider **`Claude Sonnet 4`** (lower refusal rate than `Gemini 2.5 Flash` on this benchmark).",
+    "- **Avoid silent abstention on answerable items:** prefer **`Claude Sonnet 4`** (lower inappropriate-refusal rate vs `Gemini 2.5 Flash`)."
+  ],
+  "evaluation_protocol": {
+    "abgs_version": "0.1.0",
+    "evaluation_protocol_id": "abgs-eval-hybrid-1",
+    "validated_qa_sha256": "6a5ca08ebdbe879cf17a90a7a008b0c9873c4f838d7e6641e97087eb4645a1c4",
+    "validated_qa_path": "C:/AI Projects/ABGS/artifacts/runs/fly_fishing/validated_qa.jsonl",
+    "run_manifest_sha256": "7e697f0485cf875fa02149e9655da42bf3d94781c49b6fbde5e65757bf496a1d",
+    "run_manifest_path": "C:/AI Projects/ABGS/artifacts/runs/fly_fishing/run_manifest.json",
+    "run_id": "709bd80eb54b",
+    "pipeline_version": "0.1.0",
+    "config_hash": "f8e4fb961aae12b89b42a7e38e8012c6601fd2e4e25accb58ceead3928fcebfa",
+    "input_corpus_hashes": [
+      "856b3d2ce3a5214c68eafc71f2a6485c343043f83a5bfb5bd3519daa7e8e8d2c",
+      "603b2684ef627b20729898dee3e2c0d4b7188ee1573691b00b81f5c5c5c8343a",
+      "7530491e22d56d5fff6dc4d66d60a68aed61f3d2813ff6af0faeb7f88dc4e1ee"
+    ],
+    "resolved_models": {
+      "gemini": "gemini-2.5-flash",
+      "anthropic": "claude-sonnet-4-20250514"
+    }
+  }
+}

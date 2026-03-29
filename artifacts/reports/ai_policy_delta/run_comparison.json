@@ -1,0 +1,73 @@
+{
+  "baseline_run": "AI_Policy_refined",
+  "candidate_run": "AI_Policy",
+  "baseline_path": "artifacts\\runs\\AI_Policy_refined",
+  "candidate_path": "artifacts\\runs\\AI_Policy",
+  "summary": {
+    "baseline_validation_pass_rate": 0.731,
+    "candidate_validation_pass_rate": 0.833,
+    "validation_pass_rate_delta": 0.101,
+    "baseline_dataset_size": 468,
+    "candidate_dataset_size": 681,
+    "dataset_size_delta": 213,
+    "baseline_hard_fail_count": 172,
+    "candidate_hard_fail_count": 137,
+    "hard_fail_delta": -35,
+    "recommendation": "Candidate run is an improvement and should be treated as the new benchmark baseline."
+  },
+  "quality_deltas": {
+    "multi_chunk_ratio_delta": 0.037,
+    "avg_citations_per_question_delta": 0.037,
+    "avg_confidence_delta": 0.043,
+    "duplicate_hard_fail_delta": -35,
+    "low_information_soft_fail_delta": -27
+  },
+  "preprocessing_deltas": {
+    "raw_chunk_count_delta": 91,
+    "accepted_chunk_count_delta": 89,
+    "filtered_chunk_count_delta": 2,
+    "baseline_filter_reason_counts": {
+      "front_matter_layout": 5,
+      "front_matter_marker": 5,
+      "cover_page_marker": 5,
+      "version_header": 1,
+      "table_of_contents_pattern": 10,
+      "low_alpha_density": 8,
+      "ocr_noise": 1
+    },
+    "candidate_filter_reason_counts": {
+      "front_matter_layout": 4,
+      "front_matter_marker": 6,
+      "cover_page_marker": 5,
+      "version_header": 1,
+      "table_of_contents_pattern": 12,
+      "low_alpha_density": 10,
+      "ocr_noise": 1
+    }
+  },
+  "generation_deltas": {
+    "generated_questions_delta": 178,
+    "skipped_duplicate_signatures_delta": -8,
+    "skipped_low_quality_topics_delta": -3,
+    "unique_topic_count_delta": 84
+  },
+  "evaluation_deltas": {
+    "models": {
+      "extractive_baseline": {
+        "baseline_answer_support_rate": 0.809,
+        "candidate_answer_support_rate": 0.792,
+        "answer_support_rate_delta": -0.017
+      },
+      "oracle": {
+        "baseline_answer_support_rate": 1.0,
+        "candidate_answer_support_rate": 1.0,
+        "answer_support_rate_delta": 0.0
+      },
+      "cautious_refuser": {
+        "baseline_answer_support_rate": 0.653,
+        "candidate_answer_support_rate": 0.602,
+        "answer_support_rate_delta": -0.051
+      }
+    }
+  }
+}

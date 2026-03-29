@@ -1,0 +1,5 @@
+The cooling assembly shall be inspected before each operational cycle. Operators must verify hose integrity, connector alignment, and pressure seal condition. If any connector shows corrosion, the assembly must be removed from service immediately.
+
+Preventive maintenance is performed every thirty days. The technician records pressure readings, replaces the inline filter, and confirms that the emergency bypass valve opens within two seconds. Any response slower than two seconds is logged as a critical discrepancy.
+
+During high-temperature operations, crews should increase inspection frequency and stage a backup assembly. If the ambient temperature exceeds the approved threshold, the unit should transition to reduced-power mode until cooling performance stabilizes.

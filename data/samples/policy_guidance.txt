@@ -1,0 +1,5 @@
+Program managers are responsible for documenting model evaluation objectives before any benchmark run begins. Each evaluation package must include the mission context, intended users, operational constraints, and acceptable error thresholds.
+
+When benchmark results are reviewed, the team must distinguish unsupported answers from grounded answers that are merely incomplete. Unsupported answers require corrective action because they increase operational risk and erode analyst trust.
+
+If a model refuses to answer, evaluators should determine whether the refusal was appropriate for the available evidence. Cautious refusal is acceptable when the corpus does not support a confident response, but aggressive refusal on well-supported questions lowers mission utility.

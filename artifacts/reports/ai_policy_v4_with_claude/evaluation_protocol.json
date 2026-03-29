@@ -1,0 +1,20 @@
+{
+  "abgs_version": "0.1.0",
+  "evaluation_protocol_id": "abgs-eval-hybrid-1",
+  "validated_qa_sha256": "02d922681bc4e38d5502778048a163905f23eee29997bcfdf6adacca4284edac",
+  "validated_qa_path": "C:/AI Projects/ABGS/artifacts/runs/AI_Policy_gemini_pilot_v4/validated_qa.jsonl",
+  "run_manifest_sha256": "f479e84a20f710faaa0fd61b93b862063c1ed3c3c81a4d5ac696b1aae37cc895",
+  "run_manifest_path": "C:/AI Projects/ABGS/artifacts/runs/AI_Policy_gemini_pilot_v4/run_manifest.json",
+  "run_id": "805d62b03b4a",
+  "pipeline_version": "0.1.0",
+  "config_hash": "5745477fc9fc327dbe5860859ac231934d8a42a807d7157ed0afd990721e6167",
+  "input_corpus_hashes": [
+    "f0342b097f949b2e27eac87f35996df8cef6d8a752c9c07200bfbd87d3672b8b",
+    "91d56ab3ddefe43f395bde31e1c3923fb37f47091275aaf2a0d7da500ff547f4",
+    "f1688147a60754365cfe7340cbf11d7579b86f562917313ffce90ed7fbbdbeaf"
+  ],
+  "resolved_models": {
+    "gemini": "gemini-2.5-flash",
+    "anthropic": "claude-sonnet-4-20250514"
+  }
+}
