@@ -30,12 +30,7 @@ python -m venv .venv
 pip install -e .[dev]
 ```
 
-2. Add a repo-root `.env` file when using Gemini-backed generation:
-
-```text
-GEMINI_API_KEY=your_key_here
-GEMINI_MODEL=gemini-2.5-flash
-```
+2. For API keys (Gemini / Anthropic live eval), copy **`.env.example`** to **`.env`** and fill in values. The real `.env` is **gitignored** and must not be committed.
 
 3. Run the sample pipeline:
 
