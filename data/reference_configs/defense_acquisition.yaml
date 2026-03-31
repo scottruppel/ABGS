@@ -1,11 +1,10 @@
-# ABGS Configuration for Magic: The Gathering Draft Benchmark
-# Domain: Magic: The Gathering Limited Format
-# Focus: Draft strategy, card evaluation, meta-game knowledge
-# Benchmark Type: Evaluation of LLM understanding of game strategy and mechanics
+# ABGS Configuration for Defense Acquisition System Benchmark
+# Domain: Federal Defense Acquisition
+# Focus: DAS phases, FAR/DFARS, Adaptive Acquisition Framework, contract types
+# Benchmark Type: Evaluation of LLM understanding of acquisition policy and decision-making
 
-name: "Magic: The Gathering Draft Strategy Benchmark"
-category: "game_strategy"
-description: "Testing LLM comprehension of MTG draft theory, card evaluation, metagame knowledge, and strategic decision-making"
+name: "Defense Acquisition System (DAS) Comprehensive Benchmark"
+category: "government_acquisition"
 
 # Ingestion Configuration
 ingestion:
@@ -20,7 +19,7 @@ generation:
   seed: 42
   target_questions_per_chunk: 2
   minimum_multi_chunk_ratio: 0.4
-  max_questions: 200
+  max_questions: 400
   temperature: 0.2
 
 # Quality Configuration
