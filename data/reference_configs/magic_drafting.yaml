@@ -1,0 +1,134 @@
+# ABGS Configuration for Magic: The Gathering Draft Benchmark
+# Domain: Magic: The Gathering Limited Format
+# Focus: Draft strategy, card evaluation, meta-game knowledge
+# Benchmark Type: Evaluation of LLM understanding of game strategy and mechanics
+
+name: "Magic: The Gathering Draft Strategy Benchmark"
+description: "Testing LLM comprehension of MTG draft theory, card evaluation, metagame knowledge, and strategic decision-making"
+
+# Ingestion Configuration
+ingestion:
+  formats: ["md", "txt"]
+  chunk_strategy: "semantic"
+  chunk_size: 1000  # words
+  overlap: 100  # words
+  extract_metadata: true
+
+# Content Filtering (focus on draft-relevant material)
+filtering:
+  preserve_code_blocks: false
+  preserve_tables: true
+  min_chunk_words: 50
+  exclude_patterns:
+    - "^.*placeholder.*$"
+    - "^.*advertisement.*$"
+
+# Generation Configuration
+generation:
+  # Question distribution target
+  question_types:
+    factual: 0.25      # "What is X?" - direct knowledge
+    procedural: 0.25   # "How do you...?" - process understanding
+    analytical: 0.35   # "Why would...?" - reasoning
+    adversarial: 0.15  # Edge cases, trick questions
+
+  # Question diversity
+  question_diversity:
+    mechanics: 0.20      # Game rules and mechanics
+    strategy: 0.30       # Strategic decision-making
+    evaluation: 0.25     # Card evaluation and ranking
+    metagame: 0.25       # Format meta, synergies, archetypes
+
+  # Difficulty distribution
+  difficulty_distribution:
+    L1_retrieval: 0.30         # Simple fact retrieval
+    L2_synthesis: 0.40         # Multi-step reasoning
+    L3_expert: 0.30            # Expert-level reasoning
+
+  # LLM Configuration for generation
+  provider: "gemini"  # Can also use "anthropic" if configured
+  model_parameters:
+    temperature: 0.7  # Allow some creativity while staying grounded
+    max_tokens: 1000
+    top_p: 0.9
+
+# Validation Configuration
+validation:
+  # Retrieval grounding: answers must cite document spans
+  enforce_retrieval_grounding: true
+  
+  # Cross-validation
+  validation_checks:
+    - consistency: true      # Rephrase question, expect same answer
+    - hallucination: true    # Check for invented facts
+    - ambiguity: true        # Flag ambiguous questions
+    - source_grounding: true # Verify answers are in corpus
+
+  # Confidence thresholds
+  confidence_thresholds:
+    high: 0.85
+    medium: 0.70
+    low: 0.50
+
+# Dataset Configuration
+dataset:
+  export_format: "jsonl"
+  include_metadata: true
+  versioning: true
+
+# Evaluation Configuration
+evaluation:
+  # Metrics to compute
+  metrics:
+    - exact_match: true
+    - semantic_similarity: true
+    - f1_score: true
+    - llm_rubric: true
+
+  # LLM-based evaluation rubric
+  rubric:
+    - criterion: "Factual Accuracy"
+      weight: 0.30
+      scale: "0-5"
+    - criterion: "Strategic Reasoning"
+      weight: 0.25
+      scale: "0-5"
+    - criterion: "Source Grounding"
+      weight: 0.20
+      scale: "0-5"
+    - criterion: "Completeness"
+      weight: 0.15
+      scale: "0-5"
+    - criterion: "Clarity"
+      weight: 0.10
+      scale: "0-5"
+
+  # Models to evaluate against
+  models:
+    - name: "Gemini 3.0 Pro"
+      provider: "google"
+      endpoint: "gemini-3.0-pro"
+    - name: "Claude Sonnet 4"
+      provider: "anthropic"
+      endpoint: "claude-sonnet-4"
+
+# Target Questions (examples for validation)
+sample_questions:
+  - "Why is mana curve important in limited deck construction?"
+  - "What does it mean to 'read signals' during a draft?"
+  - "Name three reasons why cheap removal is more valuable than creature removal in draft."
+  - "When should you splash a third color in a draft deck?"
+  - "Explain the relationship between archetype density and draft strategy."
+  - "Why is a 3-mana 2/2 creature usually worse than a 2-mana 2/2 creature in limited?"
+  - "What is CAPS theory and how does it apply to card evaluation?"
+  - "How does the pick order (pack 1 vs pack 3) change what cards you should prioritize?"
+
+# Reporting Configuration
+reporting:
+  generate_summary: true
+  include_coverage_analysis: true
+  include_failure_mode_analysis: true
+  output_formats:
+    - "json"
+    - "markdown"
+    - "csv"
